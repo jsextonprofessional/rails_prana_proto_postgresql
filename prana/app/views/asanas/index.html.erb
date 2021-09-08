@@ -1,2 +1,15 @@
 
 <h1>yeet world</h1>
+
+<table>
+<% @asanas.each do |asana| %>
+    <tr>
+        <td><%= asana.asana_name %></td>
+        <td><%= asana.asana_type %></td>
+        <td><%= asana.target_general %></td>
+        <td><%= asana.target_specific %></td>
+        <td><%= asana.difficulty %></td>
+        <td><%= asana.duration %></td>
+    </tr>
+<% end %>
+</table>
