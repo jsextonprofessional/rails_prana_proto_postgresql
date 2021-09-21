@@ -1,0 +1,27 @@
+<h1 class="text-center display-5 fw-lighter m-5">Results</h1>
+
+
+<% if @search.search_asanas.empty? %>
+
+    <p>No Records Found</p>
+
+<% else %>
+
+    <% @search.search_asanas.each do |result| %>
+    <br>
+
+    <div class="div">
+    <hr class="text-info">
+        <h1 class="text-center display-6 fw-lighter mb-3"><%= result.asana_name %></h1>
+        <p class="text-center fs-3 fw-lighter mb-2">Asana Type: <%= result.asana_type %></p>
+        <p class="text-center fs-3 fw-lighter mb-2">General Body Area: <%= result.target_general %></p>
+        <p class="text-center fs-3 fw-lighter mb-2">Target Body Part: <%= result.target_specific %></p>
+        <p class="text-center fs-3 fw-lighter mb-2">Difficulty: <%= result.difficulty %></p>
+        <p class="text-center fs-3 fw-lighter mb-2">Duration: <%= result.duration %> minutes</p>
+        <hr class="text-info">
+    </div>
+
+    <% end %>
+
+<% end %>
+<p><%= link_to 'Back', new_search_path %></p>

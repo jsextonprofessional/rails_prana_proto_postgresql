@@ -1,0 +1,311 @@
+<h1 class="text-center m-5 display-5 fw-lighter">Add a new asana to the database: </h1><br><br>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <h4><%= error%></h4>
+    <% end %>
+<% end %>
+<form action="/asanas" method="POST" class="m-4 row">
+<div class="col border-end border-info">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label class="fs-2 fw-light">Asana Name:</label><br><br>
+    <input type="text" name="asana[asana_name]" placeholder="asana name"><br><br>
+    <hr class="text-info">
+    <label class="fs-2 fw-light">Asana Type: </label><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="breathing">
+        <label class="form-check-label" for="flexRadioDefault1">
+        breathing
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="balancing">
+        <label class="form-check-label" for="flexRadioDefault1">
+        balancing
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="mudras">
+        <label class="form-check-label" for="flexRadioDefault1">
+        mudras
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="meditation">
+        <label class="form-check-label" for="flexRadioDefault1">
+        meditation
+        </label>
+    </div><br><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="standing">
+        <label class="form-check-label" for="flexRadioDefault1">
+        standing
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="sitting">
+        <label class="form-check-label" for="flexRadioDefault1">
+        sitting
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="forward-bending">
+        <label class="form-check-label" for="flexRadioDefault1">
+        forward bending
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="backward-bending">
+        <label class="form-check-label" for="flexRadioDefault1">
+        backward bending
+        </label>
+    </div><br><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="inverted">
+        <label class="form-check-label" for="flexRadioDefault1">
+        inverted
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="twisting">
+        <label class="form-check-label" for="flexRadioDefault1">
+        twisting
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="hips">
+        <label class="form-check-label" for="flexRadioDefault1">
+        hips
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[asana_type]" id="flexRadioDefault1" value="dynamic">
+        <label class="form-check-label" for="flexRadioDefault1">
+        dynamic
+        </label>
+    </div>
+    <br><br>
+    <hr class="text-info">
+
+        <label class="fs-2 fw-light">Difficulty Level:</label><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[difficulty]" id="flexRadioDefault1" value="">
+        <label class="form-check-label" for="flexRadioDefault1">
+        easy
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[difficulty]" id="flexRadioDefault1" value="intermediate">
+        <label class="form-check-label" for="flexRadioDefault1">
+        intermediate
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[difficulty]" id="flexRadioDefault1" value="advanced">
+        <label class="form-check-label" for="flexRadioDefault1">
+        advanced
+        </label>
+    </div><br><br>
+    <hr class="text-info">
+
+    <label class="fs-2 fw-light">Duration:</label><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[duration]" id="flexRadioDefault1" value="1">
+        <label class="form-check-label" for="flexRadioDefault1">
+        1 minute
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[duration]" id="flexRadioDefault1" value="2">
+        <label class="form-check-label" for="flexRadioDefault1">
+        2 minutes
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[duration]" id="flexRadioDefault1" value="3">
+        <label class="form-check-label" for="flexRadioDefault1">
+        3 minutes
+        </label>
+    </div><br><br>
+
+    </div>
+
+    <div class="col border-start border-info">
+    <label class="fs-2 fw-light">General Body Area: </label><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="head">
+        <label class="form-check-label" for="flexRadioDefault1">
+        head
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="upper-back">
+        <label class="form-check-label" for="flexRadioDefault1">
+        upper back
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="lower-back">
+        <label class="form-check-label" for="flexRadioDefault1">
+        lower back
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="arms">
+        <label class="form-check-label" for="flexRadioDefault1">
+        arms
+        </label>
+    </div><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="chest">
+        <label class="form-check-label" for="flexRadioDefault1">
+        chest
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="core">
+        <label class="form-check-label" for="flexRadioDefault1">
+        core
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="upper-legs">
+        <label class="form-check-label" for="flexRadioDefault1">
+        upper legs
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_general]" id="flexRadioDefault1" value="lower-legs">
+        <label class="form-check-label" for="flexRadioDefault1">
+        lower legs
+        </label>
+    </div><br><br>
+    <hr class="text-info">
+    <label class="fs-2 fw-light">Specific Body Part:</label><br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="eyes">
+        <label class="form-check-label" for="flexRadioDefault1">
+        eyes
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="face">
+        <label class="form-check-label" for="flexRadioDefault1">
+        face
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="neck">
+        <label class="form-check-label" for="flexRadioDefault1">
+        neck
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="shoulders">
+        <label class="form-check-label" for="flexRadioDefault1">
+        shoulders
+        </label>
+    </div>
+    <br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="triceps">
+        <label class="form-check-label" for="flexRadioDefault1">
+        triceps
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="biceps">
+        <label class="form-check-label" for="flexRadioDefault1">
+        biceps
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="forearms">
+        <label class="form-check-label" for="flexRadioDefault1">
+        forearms
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="hands">
+        <label class="form-check-label" for="flexRadioDefault1">
+        hands
+        </label>
+    </div>
+    <br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="pecs">
+        <label class="form-check-label" for="flexRadioDefault1">
+        pecs
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="breath">
+        <label class="form-check-label" for="flexRadioDefault1">
+        breath
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="lats">
+        <label class="form-check-label" for="flexRadioDefault1">
+        lats
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="abdomen">
+        <label class="form-check-label" for="flexRadioDefault1">
+        abdomen
+        </label>
+    </div>
+    <br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="obliques">
+        <label class="form-check-label" for="flexRadioDefault1">
+        obliques
+        </label>
+    </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="hips">
+        <label class="form-check-label" for="flexRadioDefault1">
+        hips
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="pelvis">
+        <label class="form-check-label" for="flexRadioDefault1">
+        pelvis
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="butt">
+        <label class="form-check-label" for="flexRadioDefault1">
+        butt
+        </label>
+    </div>
+    <br><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="quads">
+        <label class="form-check-label" for="flexRadioDefault1">
+        quads
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="hamstrings">
+        <label class="form-check-label" for="flexRadioDefault1">
+        hamstrings
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="calves">
+        <label class="form-check-label" for="flexRadioDefault1">
+        calves
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="asana[target_specific]" id="flexRadioDefault1" value="feet">
+        <label class="form-check-label" for="flexRadioDefault1">
+        feet
+        </label>
+    </div>
+    <br><br>
+</div>
+    <input type="submit" value="Create" class="mt-3">
+</form>

@@ -1,0 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prana</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container-fluid align-self-center min-vh-100 justify-content-center border border-white pb-5">
+    <%= render "shared/navbar" %>
+        <div class="row justify-content-center mx-auto mt-5">
+            <div class="col-9 min-vh-100 align-self-center justify-content-center border border-5 rounded-3 border-info bg-white" style="--bs-bg-opacity: .9">
+                <%= yield %>
+            </div>
+        </div>
+        <%= render "shared/copyright" %>
+    </div>
+</body>
+<%= render "shared/ascii_sig" %>

@@ -1,0 +1,51 @@
+<div class="table-responsive">
+    <table class="table table-hover align-middle m-2">
+        <thead>
+            <tr>
+                <th scope="col" class="fs-5 fw-light">Asana Name</th>
+                <th scope="col" class="fs-5 fw-light">Asana Type</th>
+                <th scope="col" class="fs-5 fw-light">Target Area</th>
+                <th scope="col" class="fs-5 fw-light">Target Body Part</th>
+                <th scope="col" class="fs-5 fw-light">Difficulty</th>
+                <th scope="col" class="fs-5 fw-light">Duration</th>
+                <%
+=begin%>
+ <th scope="col" class="fs-5 fw-light">Edit</th> 
+<%
+=end%>
+                <th scope="col" class="fs-5 fw-light">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @asanas.each do |asana| %>
+            <tr>
+                <td>
+                <a href="/asanas/<%= asana.id%>" class="link-info">
+                    <%= asana.asana_name%></td>
+                </a>
+                <td class="fs-6 fw-light"><%= asana.asana_type%></td>
+                <td class="fs-6 fw-light"><%= asana.target_general%></td>
+                <td class="fs-6 fw-light"><%= asana.target_specific%></td>
+                <td class="fs-6 fw-light"><%= asana.difficulty%></td>
+                <td class="fs-6 fw-light"><%= asana.duration%></td>
+                <%
+=begin%>
+ <td>
+                    <form action="/asanas/<%= asana.id %>/edit">
+                        <input type="submit" value="Δ" class="text-warning">
+                    </form>
+                </td> 
+<%
+=end%>
+                <td>
+                    <form action="/asanas/<%= asana.id %>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type="submit" value="X" class="text-danger">
+                    </form>
+                </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
